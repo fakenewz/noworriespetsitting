@@ -11,9 +11,10 @@ app.use(bodyParser.json());
 app.use(express.static("app/public"));
 
 
-require("./app/routes/api-routes.js")(app);
-require("./app/routes/html-routes.js")(app);
+require("./App/Routes/api-routes")(app);
+require("./App/Routes/html-routes")(app);
 
 app.listen(PORT, function() {
-  console.log("App listening on PORT " + PORT);
+  console.log("Server listening on: http://localhost:" + PORT);
 });
+

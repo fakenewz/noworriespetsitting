@@ -175,14 +175,38 @@ body {
             moreinfo: $("#tenth_q").val().trim(),
         };
 
-        $.post("/api/petsitter", userAnswers,
-            function (data) {
+        $.post("/api/new", userAnswers)
+           .then(function(data) {
+            console.log(data);
+            console.log("Adding");
+           });
 
                 $("#first_q").val(""); $("#second_q").val(""); $("#third_q").val(""); $("#fourth_q").val("");
                 $("#fifth_q").val(""); $("#sixth_q").val(""); $("#seventh_q").val(""); $("#eighth_q").val("");
                 $("#ninth_q").val(""); $("#tenth_q").val("");
 
-            });
     });
+
+    function runSitterQuery() {
+
+    var currentURL = window.location.origin;
+
+    $.ajax({
+        url: currentURL + "/api/new",
+        method: "GET",
+    })
+    .then(function (sitterData) {
+
+        console.log("URL: " + currentURL + "/api/new");
+        console.log("--------------------");
+
+        console.log(sitterData);
+        console.log("--------------------");
+
+
+       });
+    }
+
+    runSitterQuery();
 
 </script>

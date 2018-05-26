@@ -1,10 +1,9 @@
-
-var petSitters = require("../Models/sitters");
+var Sitters = require("../Models/sitters");
 
 module.exports = function(app) {
   app.get("/api/:petsitters?", function(req, res) {
     if (req.params.petsitters) {
-      petSitters.findOne({
+      Sitters.findOne({
         where: {
           routeName: req.params.petsitters
         }
@@ -13,32 +12,30 @@ module.exports = function(app) {
       });
     }
     else {
-      petSitters.findAll({}).then(function(result) {
+      Sitters.findAll({}).then(function(result) {
         return res.json(result);
       });
     }
   });
 
   app.post("/api/new", function(req, res) {
-    var sitter = req.body;
+    var petsit = req.body;
 
-    // Create a routeName
-    // Using a RegEx Pattern to remove spaces from character.name
-    var routeName = sitter.name.replace(/\s+/g, "").toLowerCase();
+    console.log("petsit" + petsit)
 
-    // Then add the character to the database using sequelize
-    petSitters.create({
+    var routeName = petsit.full_name;
+
+    Sitters.create({
       routeName: routeName,
-      firstname: sitter.first_name,
-      lastname: sitter.last_name,
-      city: sitter.city,
-      email: sitter.email, 
-      yearsexperience: sitter.years_of_experience,
-      sitdog: sitter.would_sit_dog,
-      sitcat: sitter.would_sit_cat,
-      sitbird: sitter.would_sit_bird,
-      sitsnake: sitter.would_sit_snake,
-      addcomments: sitter.additional_comments,
+      fullname: petsit.full_name,
+      city: petsit.city,
+      email: petsit.email, 
+      yearsexperience: petsit.years_of_experience,
+      sitdog: petsit.would_sit_dog,
+      sitcat: petsit.would_sit_cat,
+      sitbird: petsit.would_sit_bird,
+      sitsnake: petsit.would_sit_snake,
+      addcomments: petsit.additional_comments,
 
     });
   });

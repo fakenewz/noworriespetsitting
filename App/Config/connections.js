@@ -1,4 +1,3 @@
-
 var Sequelize = require("sequelize");
 
 var sequelize = new Sequelize("petSitter", "petapp", "noworries", {
@@ -11,6 +10,8 @@ var sequelize = new Sequelize("petSitter", "petapp", "noworries", {
     idle: 10000
   }
 });
+
+console.log("connected");
 
 module.exports = sequelize;
 
