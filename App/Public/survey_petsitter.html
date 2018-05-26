@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Pet Sitter Survey</title>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://code.jquery.com/jquery.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+
+</head>
+
+<!---->
+
+<style>
+
+body {
+    padding-left: 30px;
+    background-color: tan;
+}
+
+</style>
+
+<!---->
+
+<body>
+    <br>
+    <div class="panel-body">
+
+        <form>
+
+            <div class="form-group">
+                <label for="user_firstname">
+                    <b>First Name:</b>
+                </label>
+                <input type="text" class="form-control" id="first_q" placeholder="Enter answer" name="first_q">
+            </div>
+
+            <div class="form-group">
+                <label for="user_lastname">
+                    <b>Last Name:</b>
+                </label>
+                <input type="text" class="form-control" id="second_q" placeholder="Enter answer" name="second_q">
+            </div>
+
+            <div class="form-group">
+                <label for="user_email">
+                    <b>Email:</b>
+                </label>
+                <input type="text" class="form-control" id="third_q" placeholder="Enter answer" name="third_q">
+            </div>
+
+            <p>
+                <b>City:</b>
+            </p>
+            <select id="fourth_q">
+                <option value="1">Chicago</option>
+                <option value="2">New York City</option>
+                <option value="3">Washington DC</option>
+                <option value="4">Boston</option>
+                <option value="5">Los Angeles</option>
+                <option value="6">San Francisco</option>
+                <option value="7">Seattle</option>
+                <option value="8">Austin</option>
+                <option value="9">Dallas</option>
+                <option value="10">Atlanta</option>
+            </select><br><br>
+
+            <p>
+                <b>Experience (Years):</b>
+            </p>
+            <select id="fifth_q">
+                <option value="0">Less than 1</option>
+                <option value="1">1 - 2</option>
+                <option value="2">2 - 3</option>
+                <option value="3">3 - 4</option>
+                <option value="4">4 - 5</option>
+                <option value="5">5+</option>
+            </select><br><br>
+
+            <p>
+                <b>Hourly Rate (Range):</b>
+            </p>
+            <select id="sixth_q">
+                <option value="1">$12.00 - $13.99</option>
+                <option value="2">$14.00 - $15.99</option>
+                <option value="3">$16.00 - $17.99</option>
+                <option value="4">$18.00 - $19.99</option>
+                <option value="5">$20.00 - $21.99</option>
+                <option value="6">$22.00 - $23.99</option>
+                <option value="7">$24.00 - $25.99</option>
+                <option value="8">$26.00 - $27.99</option>                
+                <option value="9">$28.00 - $29.99</option>
+                <option value="10">$30+</option>
+            </select><br><br>
+
+            <p>
+                <b>Would you sit dogs:</b>
+            </p>
+            <select id="seventh_q">
+                <option value="1">Yes</option>
+                <option value="2">No</option>
+            </select><br><br>
+
+            <p>
+                <b>Would you sit cats:</b>
+            </p>
+            <select id="eighth_q">
+                <option value="1">Yes</option>
+                <option value="2">No</option>
+            </select><br><br>
+
+            <p>
+                <b>Would you sit birds:</b>
+            </p>
+            <select id="ninth_q">
+                <option value="1">Yes</option>
+                <option value="2">No</option>
+            </select><br><br>
+
+            <div class="form-group">
+                <label for="user_moreinfo">
+                    <b>More about Me!</b>
+                </label>
+                <input type="text" class="form-control" id="tenth_q" placeholder="Enter answer" name="tenth_q">
+            </div>
+            <br><br><br>
+
+            <button type="button" class="btn btn-default" data-toggle="modal" id="submit">SUBMIT</button>
+
+        </form>
+
+    </div><br><br>
+
+    <div id="testHere"></div>
+
+    <br>
+    <br>
+    <footer class="footer">
+        <div class="container">
+            <p>
+                Dummy Footer
+            </p>
+        </div>
+    </footer>
+
+    </div>
+
+</body>
+</html>
+
+<script type="text/javascript">
+
+    $("#first_q").val(""); $("#second_q").val(""); $("#third_q").val(""); $("#fourth_q").val("");
+    $("#fifth_q").val(""); $("#sixth_q").val(""); $("#seventh_q").val(""); $("#eighth_q").val("");
+    $("#ninth_q").val(""); $("#tenth_q").val("");
+
+
+    $("#submit").on("click", function (event) {
+        event.preventDefault();
+
+        var userAnswers = {
+            firstname: $("#first_q").val().trim(),
+            lastname: $("#second_q").val().trim(),
+            email: $("#third_q").val().trim(),
+            city: $("#fourth_q").val().trim(),
+            experience: $("#fifth_q").val().trim(),
+            hourlyrate: $("#sixth_q").val().trim(),
+            sitdogs: $("#seventh_q").val().trim(),
+            sitcats: $("#eighth_q").val().trim(),
+            sitbirds: $("#ninth_q").val().trim(),
+            moreinfo: $("#tenth_q").val().trim(),
+        };
+
+        $.post("/api/petsitter", userAnswers,
+            function (data) {
+
+                $("#first_q").val(""); $("#second_q").val(""); $("#third_q").val(""); $("#fourth_q").val("");
+                $("#fifth_q").val(""); $("#sixth_q").val(""); $("#seventh_q").val(""); $("#eighth_q").val("");
+                $("#ninth_q").val(""); $("#tenth_q").val("");
+
+            });
+    });
+
+</script>
