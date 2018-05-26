@@ -7,17 +7,30 @@ var Sequelize = require("sequelize");
 var sequelize = require("../config/connection.js");
 
 // Creates a "Character" model that matches up with DB
-var Character = sequelize.define("petsitter", {
+var Pet_sitter = sequelize.define("petsitter", {
   // the routeName gets saved as a string
   routeName: Sequelize.STRING,
   // the name of the character (a string)
-  name: Sequelize.STRING,
+  first_name: Sequelize.STRING,
   // the character's role (a string)
-  role: Sequelize.STRING,
-  // the character's age (a string)
-  age: Sequelize.INTEGER,
-  // and the character's force points (an int)
-  forcePoints: Sequelize.INTEGER
+  last_name: Sequelize.STRING,
+
+  city: Sequelize.STRING,
+
+  email: Sequelize.STRING,
+
+  years_of_experience: Sequelize.INTEGER,
+
+  would_sit_dog: Sequelize.BOOLEAN,
+
+  would_sit_cat: Selection.BOOLEAN,
+
+  would_sit_bird: Selection.BOOLEAN,
+
+  would_sit_snake: Selection.BOOLEAN,
+
+  additional_comments: Selection.STRING,
+
 }, {
   timestamps: false
 });
