@@ -23,19 +23,19 @@ module.exports = function(app) {
 
     console.log("petsit" + petsit)
 
-    var routeName = petsit.full_name;
+    var routeName = petsit.full_name.replace(/\s+/g, "").toLowerCase();
 
     Sitters.create({
       routeName: routeName,
-      fullname: petsit.full_name,
+      full_name: petsit.full_name,
       city: petsit.city,
       email: petsit.email, 
-      yearsexperience: petsit.years_of_experience,
-      sitdog: petsit.would_sit_dog,
-      sitcat: petsit.would_sit_cat,
-      sitbird: petsit.would_sit_bird,
-      sitsnake: petsit.would_sit_snake,
-      addcomments: petsit.additional_comments,
+      years_of_experience: petsit.years_of_experience,
+      would_sit_dog: petsit.would_sit_dog,
+      would_sit_cat: petsit.would_sit_cat,
+      would_sit_bird: petsit.would_sit_bird,
+      would_sit_snake: petsit.would_sit_snake,
+      additional_comments: petsit.additional_comments,
 
     });
   });
