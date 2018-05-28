@@ -18,7 +18,7 @@
 <style>
 body {
     padding-left: 30px;
-    background-color: pink;
+    background-color: lightpink;
 }
 </style>
 
@@ -60,37 +60,20 @@ body {
                 <option value="10">Atlanta</option>
             </select><br><br>
 
-            <p>
-                <b>Do you have a dog:</b>
-            </p>
-            <select id="four_q">
-                <option value="1">Yes</option>
-                <option value="2">No</option>
-            </select><br><br>
+            <form>
+                <b>Do you have a </b><br>
+                <input type="checkbox" name="dog" value="1">Dog &nbsp;&nbsp;&nbsp;
+                <input type="checkbox" name="dog" value="0" checked style="display:none"> 
 
-            <p>
-                <b>Do you have a cat:</b>
-            </p>
-            <select id="five_q">
-                <option value="1">Yes</option>
-                <option value="2">No</option>
-            </select><br><br>
+                <input type="checkbox" name="cat" value="1">Cat &nbsp;&nbsp;&nbsp;
+                <input type="checkbox" name="cat" value="0" checked style="display:none">
 
-            <p>
-                <b>Do you have a bird:</b>
-            </p>
-            <select id="six_q">
-                <option value="1">Yes</option>
-                <option value="2">No</option>
-            </select><br><br>
+                <input type="checkbox" name="bird" value="1">Bird &nbsp;&nbsp;&nbsp;
+                <input type="checkbox" name="bird" value="0" checked style="display:none">
 
-            <p>
-                <b>Do you have a snake:</b>
-            </p>
-            <select id="seven_q">
-                <option value="1">Yes</option>
-                <option value="2">No</option>
-            </select><br><br>
+                <input type="checkbox" name="snake" value="1">Snake &nbsp;&nbsp;&nbsp;
+                <input type="checkbox" name="snake" value="0" checked style="display:none">
+            </form><br>
 
             <div class="form-group">
                 <label for="user_moreinfo">
@@ -122,20 +105,19 @@ body {
 
 <script type="text/javascript">
 
-    $("#one_q").val(""); $("#two_q").val(""); $("#three_q").val(""); $("#four_q").val(""); $("#five_q").val(""); $("#six_q").val("");$("#seven_q").val(""); $("#eight_q").val("");
-
+    $("#one_q").val(""); $("#two_q").val(""); $("#three_q").val(""); $("#eight_q").val("");
 
     $("#submitnow").on("click", function (event) {
         event.preventDefault();
 
         var ownerAnswers = {
             fullname: $("#one_q").val().trim(),
-            place: $("#two_q").val().trim(),
-            emailaddress: $("#three_q").val().trim(),
-            hasDog: $("#four_q").val().trim(),
-            hasCat: $("#five_q").val().trim(),
-            hasBird: $("#six_q").val().trim(),
-            hasSnake: $("#seven_q").val().trim(),
+            place: $("#three_q").val().trim(),
+            emailaddress: $("#two_q").val().trim(),
+            hasDog: $("[name=dog]:checked").val().trim(),
+            hasCat: $("[name=cat]:checked").val().trim(),
+            hasBird: $("[name=bird]:checked").val().trim(),
+            hasSnake: $("[name=snake]:checked").val().trim(),
             moreInformation: $("#eight_q").val().trim(),
         };
 
@@ -144,7 +126,7 @@ body {
             console.log("Adding");
            });
 
-        $("#one_q").val(""); $("#two_q").val(""); $("#three_q").val(""); $("#four_q").val(""); $("#five_q").val(""); $("#six_q").val("");$("#seven_q").val(""); $("#eight_q").val("");
+        $("#one_q").val(""); $("#two_q").val(""); $("#three_q").val(""); $("#eight_q").val("");
 
     });
 
