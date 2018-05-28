@@ -160,7 +160,7 @@ body {
     $("#submit").on("click", function (event) {
         event.preventDefault();
 
-        var userAnswers = {
+        var sitterAnswers = {
             full_name: $("#first_q").val().trim(),
             city: $("#fourth_q").val().trim(),
             email: $("#third_q").val().trim(),
@@ -172,9 +172,9 @@ body {
             additional_comments: $("#tenth_q").val().trim(),
         };
 
-        $.post("/api/new", userAnswers)
+        $.post("/api/newsitterinformation", sitterAnswers)
            .then(function(data) {
-            console.log("Adding");
+            console.log("More");
            });
 
                 $("#first_q").val(""); $("#third_q").val(""); $("#fourth_q").val("");

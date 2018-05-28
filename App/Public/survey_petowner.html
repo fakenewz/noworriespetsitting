@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Pet Owner Survey</title>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://code.jquery.com/jquery.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+
+</head>
+
+<!---->
+
+<style>
+body {
+    padding-left: 30px;
+    background-color: pink;
+}
+</style>
+
+<!---->
+
+<body>
+    <br>
+    <div class="panel-body">
+
+        <form>
+
+            <div class="form-group">
+                <label for="user_firstname">
+                    <b>First and Last Name:</b>
+                </label>
+                <input type="text" class="form-control" id="one_q" placeholder="Enter answer" name="one_q">
+            </div>
+
+            <div class="form-group">
+                <label for="user_email">
+                    <b>Email:</b>
+                </label>
+                <input type="text" class="form-control" id="two_q" placeholder="Enter answer" name="two_q">
+            </div>
+
+            <p>
+                <b>City:</b>
+            </p>
+            <select id="three_q">
+                <option value="1">Chicago</option>
+                <option value="2">New York City</option>
+                <option value="3">Washington DC</option>
+                <option value="4">Boston</option>
+                <option value="5">Los Angeles</option>
+                <option value="6">San Francisco</option>
+                <option value="7">Seattle</option>
+                <option value="8">Austin</option>
+                <option value="9">Dallas</option>
+                <option value="10">Atlanta</option>
+            </select><br><br>
+
+            <p>
+                <b>Do you have a dog:</b>
+            </p>
+            <select id="four_q">
+                <option value="1">Yes</option>
+                <option value="2">No</option>
+            </select><br><br>
+
+            <p>
+                <b>Do you have a cat:</b>
+            </p>
+            <select id="five_q">
+                <option value="1">Yes</option>
+                <option value="2">No</option>
+            </select><br><br>
+
+            <p>
+                <b>Do you have a bird:</b>
+            </p>
+            <select id="six_q">
+                <option value="1">Yes</option>
+                <option value="2">No</option>
+            </select><br><br>
+
+            <p>
+                <b>Do you have a snake:</b>
+            </p>
+            <select id="seven_q">
+                <option value="1">Yes</option>
+                <option value="2">No</option>
+            </select><br><br>
+
+            <div class="form-group">
+                <label for="user_moreinfo">
+                    <b>More information about my pet:</b>
+                </label>
+                <input type="text" class="form-control" id="eight_q" placeholder="Enter answer" name="eight_q">
+            </div>
+            <br><br><br>
+
+            <button type="button" class="btn btn-default" data-toggle="modal" id="submitnow">SUBMIT</button>
+
+        </form>
+
+    </div><br><br>
+
+    <br>
+    <footer class="footer">
+        <div class="container">
+            <p>
+                Dummy Footer
+            </p>
+        </div>
+    </footer>
+
+    </div>
+
+</body>
+</html>
+
+<script type="text/javascript">
+
+    $("#one_q").val(""); $("#two_q").val(""); $("#three_q").val(""); $("#four_q").val(""); $("#five_q").val(""); $("#six_q").val("");$("#seven_q").val(""); $("#eight_q").val("");
+
+
+    $("#submitnow").on("click", function (event) {
+        event.preventDefault();
+
+        var ownerAnswers = {
+            fullname: $("#one_q").val().trim(),
+            place: $("#two_q").val().trim(),
+            emailaddress: $("#three_q").val().trim(),
+            hasDog: $("#four_q").val().trim(),
+            hasCat: $("#five_q").val().trim(),
+            hasBird: $("#six_q").val().trim(),
+            hasSnake: $("#seven_q").val().trim(),
+            moreInformation: $("#eight_q").val().trim(),
+        };
+
+        $.post("/api/newownerinformation", ownerAnswers)
+           .then(function(data) {
+            console.log("Adding");
+           });
+
+        $("#one_q").val(""); $("#two_q").val(""); $("#three_q").val(""); $("#four_q").val(""); $("#five_q").val(""); $("#six_q").val("");$("#seven_q").val(""); $("#eight_q").val("");
+
+    });
+
+</script>
