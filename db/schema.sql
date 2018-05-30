@@ -20,6 +20,19 @@ CREATE TABLE sitters (
 	PRIMARY KEY (id)
 );
 
+CREATE TABLE owners (
+	full_name VARCHAR (50) NOT NULL,
+	email VARCHAR (50) NOT NULL,
+	city VARCHAR (50) NOT NULL,
+	have_dog BOOLEAN NOT NULL,
+	have_cat BOOLEAN NOT NULL,
+	have_bird BOOLEAN NOT NULL,
+	have_snake BOOLEAN NOT NULL,
+	more_info VARCHAR (500),
+	PRIMARY KEY (id)
+
+);
+
 CREATE TABLE users (
  id int(11) NOT NULL AUTO_INCREMENT,
  'email' varchar(100) COLLATE utf8_unicode_ci NOT NULL,
@@ -30,6 +43,8 @@ CREATE TABLE users (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 	
 );
+
+
 
 
 
