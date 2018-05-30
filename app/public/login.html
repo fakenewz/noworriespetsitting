@@ -13,10 +13,29 @@
 			<div>
 				<input type="password" placeholder="password" name="password">
 			</div>
-			<div>
-				<input type="hidden" name="redirect" value="<%= redirect %>">
-			</div>
 			<button>Log in</button>
 		</form>
 	</body>
 </html>
+<script type="text/javascript">
+
+    $("#one_q").val(""); $("#two_q").val("");
+
+    $("#login").on("click", function (event) {
+        event.preventDefault();
+
+        var userLogin = {
+            email: $("#one_q").val().trim(),
+            password: $("#three_q").val().trim(),
+        };
+
+        $.post("/auth/login", userLogin)
+           .then(function(data) {
+            console.log("Adding");
+           });
+
+        $("#one_q").val(""); $("#two_q").val("");
+
+    });
+
+</script>
