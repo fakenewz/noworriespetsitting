@@ -20,6 +20,15 @@ CREATE TABLE sitters (
 	PRIMARY KEY (id)
 );
 
+CREATE TABLE logins (
+	id int NOT NULL AUTO_INCREMENT,
+	routeName varchar (50) NOT NULL,
+	email varchar (50) NOT NULL,
+	password varchar (50) NOT NULL,
+	PRIMARY KEY (id)
+
+);
+
 
 
 
