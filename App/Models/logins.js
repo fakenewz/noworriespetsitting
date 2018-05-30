@@ -5,7 +5,7 @@ console.log("whatup");
 
 var Users = sequelize.define("users", {
   email: Sequelize.STRING,
-  thepassword: Sequelize.INTEGER,
+  thepassword: Sequelize.STRING,
   created: Sequelize.BOOLEAN,
   modified: Sequelize.BOOLEAN,
 }, {
