@@ -1,41 +1,23 @@
 var Users = require("../Models/logins")
 var Sequelize = require("sequelize");
-var sequelize = require("../Config/connectionsLogin")
+var sequelize = require("../Config/connections")
 
 exports.register = function(req,res) {
-  
+  app.post("/auth/login", function(req, res) {
+
   console.log("here");
 
   var today = new Date();
   var loginNow = req.body;
 
-  var sql = "INSERT INTO users (first_name, last_name, email, thepassword) VALUES ?";
-  var users = {
-      first_name: loginNow.first_name,
-      last_name: loginNow.last_name,
+  Users.create({
       email: loginNow.email, 
-      thepassword: loginNow.thepassword,
+      password: loginNow.password,
       created: today,
       modified: today,
-    };
-  
-    sequelize.query(sql, users, function (error, results, fields) {
-
-      if (error) {
-        console.log("error ocurred", error);
-        res.send({
-          "code":400,
-          "failed":"Error Ocurred"
-        });
-      } else {
-        console.log('The solution is: ', results);
-        res.send({
-          "code":200,
-          "success":"User registered sucessfully"
-        });
-      }
     });
-  }
+   });
+  };
 
   exports.login = function(req,res) {
     var email = loginNow.email;
@@ -49,7 +31,7 @@ exports.register = function(req,res) {
       });
     } else {
       if(results.length >0){
-        if(results[0].thepassword == thepassword){
+        if(results[0].password == password){
           res.send({
             "code":200,
             "success":"Login sucessful!"

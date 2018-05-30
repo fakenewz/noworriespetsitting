@@ -1,5 +1,0 @@
-DROP DATABASE IF EXISTS loginDB;
-
-CREATE DATABASE loginDB;
-
-USE loginDB;

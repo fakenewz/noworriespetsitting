@@ -1,5 +1,5 @@
 var Sequelize = require("sequelize");
-var sequelize = require("./../Config/connectionsLogin")
+var sequelize = require("./../Config/connections")
 
 console.log("whatup");
 
