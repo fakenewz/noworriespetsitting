@@ -1,6 +1,6 @@
 var Sequelize = require("sequelize");
 
-var sequelize = new Sequelize("petSitter", "petapp", "Steve2627!", {
+var sequelize = new Sequelize("petSitter", "petapp", "noworries", {
   host: "localhost",
   port: 3306,
   dialect: "mysql",
