@@ -8,26 +8,26 @@
 		<h1>Log in</h1>
 		<form action="/auth/login" method="post">
 			<div>
-				<input type="email" placeholder="email" name="email" value="<%= prev.display('body', 'email') %>">
+				<input type="email" placeholder="email" name="email" id = "firstq" value="<%= prev.display('body', 'email') %>">
 			</div>
 			<div>
-				<input type="password" placeholder="password" name="password">
+				<input type="password" placeholder="password" id = "secondq" name="password">
 			</div>
-			<button>Log in</button>
+			<button id = "login">Log in</button>
 		</form>
 	</body>
 </html>
-<<<<<<< HEAD
+
 <script type="text/javascript">
 
-    $("#one_q").val(""); $("#two_q").val("");
+    $("#firstq").val(""); $("#secondq").val("");
 
     $("#login").on("click", function (event) {
         event.preventDefault();
 
         var userLogin = {
-            email: $("#one_q").val().trim(),
-            password: $("#three_q").val().trim(),
+            email: $("#firstq").val().trim(),
+            password: $("#secondq").val().trim(),
         };
 
         $.post("/auth/login", userLogin)
@@ -35,10 +35,8 @@
             console.log("Adding");
            });
 
-        $("#one_q").val(""); $("#two_q").val("");
+        $("#firstq").val(""); $("#secondq").val("");
 
     });
 
 </script>
-=======
->>>>>>> b21b96b6c2d4e319fbcf8d79ff0bf938f12a6eea
