@@ -3,9 +3,9 @@ var path = require("path");
 // Routes
 module.exports = function(app) {
 
-  app.get("/", function(req, res) {
-    res.sendFile(path.join(__dirname, "../Public/view.html"));
-  });
+  // app.get("/", function(req, res) {
+  //   res.sendFile(path.join(__dirname, "../Public/view.html"));
+  // });
 
   app.get("/addsitterinformation", function(req, res) {
     res.sendFile(path.join(__dirname, "../Public/survey_petsitter.html"));
@@ -15,8 +15,8 @@ module.exports = function(app) {
     res.sendFile(path.join(__dirname, "../Public/survey_petowner.html"));
   });
 
-  app.get("/addlogin", function(req, res) {
-    res.sendFile(path.join(__dirname, "../Public/login.html"));
+  app.get("/", function(req, res) {
+    res.sendFile(path.join(__dirname, "../Public/2. Pages/9. Account/login.html"));
   });
 
   app.get("/all", function(req, res) {
