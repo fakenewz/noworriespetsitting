@@ -42,6 +42,8 @@ var Sitters = sequelize.define("sitters", {
   additional_comments: {
     type: DataTypes.STRING
   },
+}, {
+  timestamps: false
 });
 
   return Sitters;

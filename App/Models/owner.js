@@ -39,7 +39,9 @@ var Owners = sequelize.define("owners", {
   moreInformation: {
     type: DataTypes.STRING
   },
+}, {
+  timestamps: false
 });
- 
+
   return Owners;
 }
