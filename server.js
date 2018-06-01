@@ -17,7 +17,7 @@ app.use(passport.initialize());
 app.use(passport.session()); // persistent login sessions
 
 
-app.set('views', './App/Public/2. Pages/9. Account/login.html')
+app.set('9. Account', './App/Public/2. Pages/9. Account') //
 app.engine('hbs', exphbs({
     extname: '.hbs'
 }));
