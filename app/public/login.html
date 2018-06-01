@@ -1,32 +1,41 @@
 <!DOCTYPE html>
-<html>
-	<head>
-		<title>Log in</title>
-		<link rel='stylesheet' href='/styles/main.scss.css' />
-	</head>
-	<body>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Log in</title>
+	<link rel='stylesheet' href='/styles/main.scss.css' />
+</head>
+
+    <body>
 		<h1>Log in</h1>
 		<form action="/auth/login" method="post">
 			<div>
-				<input type="email" placeholder="email" name="email" value="<%= prev.display('body', 'email') %>">
+				<input type="email" placeholder="email" name="email" id = "firstq">
 			</div>
 			<div>
-				<input type="password" placeholder="password" name="password">
+				<input type="password" placeholder="password" name="thepassword" id = "secondq">
 			</div>
-			<button>Log in</button>
+			<button id = "login">Log in</button>
 		</form>
 	</body>
+
 </html>
+<<<<<<< HEAD
+=======
+
+>>>>>>> 34b4325819dd6ed4a6371a6519da2e456eb3a823
 <script type="text/javascript">
 
-    $("#one_q").val(""); $("#two_q").val("");
+    $("#firstq").val(""); $("#secondq").val("");
 
     $("#login").on("click", function (event) {
         event.preventDefault();
 
         var userLogin = {
-            email: $("#one_q").val().trim(),
-            password: $("#three_q").val().trim(),
+            email: $("#firstq").val().trim(),
+            thepassword: $("#secondq").val().trim(),
         };
 
         $.post("/auth/login", userLogin)
@@ -34,8 +43,12 @@
             console.log("Adding");
            });
 
-        $("#one_q").val(""); $("#two_q").val("");
+        $("#firstq").val(""); $("#secondq").val("");
 
     });
 
+<<<<<<< HEAD
 </script>
+=======
+</script>
+>>>>>>> 34b4325819dd6ed4a6371a6519da2e456eb3a823

@@ -1,6 +1,5 @@
-
 var express = require("express");
-var login = require("./App/Routes/login-routes")
+var login = require("./App/Routes/login-routes");
 var bodyParser = require("body-parser");
 
 var app = express();
@@ -19,13 +18,13 @@ app.use(function(req, res, next) {
 
 require("./App/Routes/api-routes")(app);
 require("./App/Routes/html-routes")(app);
+require("./App/Routes/login-routes")(app);
 
-var router = express.Router();
-router.post('/register', login.register);
-router.post('/login', login.login)
-app.use('/api', router);  //change to different address?
+ var router = express.Router();
+// router.post('/register', login.register);
+// router.post('/login', login.login)
+// app.use('/api', router);  //change to different address?
 
 app.listen(PORT, function() {
   console.log("Server listening on: http://localhost:" + PORT);
 });
-
