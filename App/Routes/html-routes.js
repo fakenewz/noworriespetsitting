@@ -11,13 +11,13 @@ module.exports = function(app) {
     res.sendFile(path.join(__dirname, "../Public/survey_petowner.html"));
   });
 
-  app.get("/", function(req, res) {
+  app.get("/signup", function(req, res) {
     // res.sendFile(path.join(__dirname, "../Public/2. Pages/9. Account/login.hbs"));
     res.render(path.join(__dirname, "../Public/2. Pages/9. Account/login.hbs"),{});
   });
 
-  app.get("/all", function(req, res) {
-    res.sendFile(path.join(__dirname, "../Public/all.html"));
+  app.get("/", function(req, res) {
+    res.sendFile(path.join(__dirname, "../Public/2. Pages/9. Account/home.html"));
   });
 
 };
