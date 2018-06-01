@@ -40,8 +40,8 @@ CREATE TABLE users (
  	id int NOT NULL AUTO_INCREMENT,
  	email varchar(100) NOT NULL,
  	thepassword varchar(255) NOT NULL,
- 	created datetime NOT NULL,
- 	modified datetime NOT NULL,
+ 	createdAt datetime NOT NULL,
+ 	updatedAt datetime NOT NULL,
  	PRIMARY KEY (id)
 );
 	

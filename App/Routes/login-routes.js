@@ -1,5 +1,4 @@
 var db = require("../Models");
-var Sequelize = require("sequelize");
 
 module.exports = function(app) {
   app.post("/auth/login", function(req, res) {
@@ -8,13 +7,13 @@ module.exports = function(app) {
 
   var today = new Date();
   var loginNow = req.body;
-  console.log("hi " + db.Users)
+  console.log(db.users)
 
-  db.Users.create({
+  db.users.create({
       email: loginNow.email, 
       thepassword: loginNow.thepassword,
-      created: today,
-      modified: today
+      createdAt: today,
+      updatedAt: today 
     }).then(function(dbUsers) {
       res.json(dbUsers);
     });

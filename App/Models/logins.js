@@ -12,12 +12,14 @@ var Users = sequelize.define("users", {
     type: DataTypes.STRING,
     allowNull: false
   },
-  created: {
+  createdAt: {
     type: DataTypes.BOOLEAN
   },
-  modified: {
+  updatedAt: {
     type: DataTypes.BOOLEAN
   },
+}, {
+  timestamps: false
 });
  
 return Users;

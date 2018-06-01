@@ -1,10 +1,9 @@
 var db = require("../Models");
-var Sequelize = require("sequelize");
 
 module.exports = function(app) {
   app.get("/sitter/:petsitters?", function(req, res) {
     if (req.params.petsitters) {
-      db.Sitters.findOne({
+      db.sitters.findOne({
         where: {
           routeName: req.params.petsitters
         }
@@ -13,7 +12,7 @@ module.exports = function(app) {
       });
     }
     else {
-      db.Sitters.findAll({}).then(function(result) {
+      db.sitters.findAll({}).then(function(result) {
         return res.json(result);
       });
     }
@@ -21,7 +20,7 @@ module.exports = function(app) {
 
   app.get("/owner/:petowners?", function(req, res) {
     if (req.params.petowners) {
-      db.Owners.findOne({
+      db.owners.findOne({
         where: {
           routeName: req.params.petowners
         }
@@ -30,7 +29,7 @@ module.exports = function(app) {
       });
     }
     else {
-      db.Owners.findAll({}).then(function(result) {
+      db.owners.findAll({}).then(function(result) {
         return res.json(result);
       });
     }
@@ -40,7 +39,9 @@ module.exports = function(app) {
     var petsit = req.body;
     var routeName = petsit.full_name.replace(/\s+/g, "").toLowerCase();
 
-    db.Sitters.create({
+    console.log(db.sitters)
+
+    db.sitters.create({
       routeName: routeName,
       full_name: petsit.full_name,
       city: petsit.city,
@@ -60,7 +61,9 @@ module.exports = function(app) {
     var petowner = req.body;
     var routeName = petowner.fullname.replace(/\s+/g, "").toLowerCase();
 
-    db.Owners.create({
+    console.log(db.owners)
+
+    db.owners.create({
       routeName: routeName,
       fullname: petowner.fullname,
       place: petowner.place,
