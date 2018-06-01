@@ -1,17 +1,24 @@
-var Sequelize = require("sequelize");
-var sequelize = require("./../Config/connections")
-
-console.log("whatup");
+module.exports = function(sequelize, DataTypes) {
 
 var Users = sequelize.define("users", {
-  email: Sequelize.STRING,
-  thepassword: Sequelize.STRING,
-  created: Sequelize.BOOLEAN,
-  modified: Sequelize.BOOLEAN,
-}, {
-  timestamps: false
+  email: {
+    notEmpty: true,
+    type: DataTypes.STRING,
+    validate: {
+      isEmail: true
+    }
+  },
+  thepassword: {
+    type: DataTypes.STRING,
+    allowNull: false
+  },
+  created: {
+    type: DataTypes.BOOLEAN
+  },
+  modified: {
+    type: DataTypes.BOOLEAN
+  },
 });
-
-Users.sync();
-
-module.exports = Users;
+ 
+return Users;
+}

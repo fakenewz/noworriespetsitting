@@ -1,23 +1,48 @@
-var Sequelize = require("sequelize");
-var sequelize  = require("./../Config/connections")
-
-console.log("hello");
+module.exports = function(sequelize, DataTypes) {
 
 var Sitters = sequelize.define("sitters", {
-  routeName: Sequelize.STRING,
-  full_name: Sequelize.STRING,
-  city: Sequelize.STRING,
-  email: Sequelize.STRING,
-  years_of_experience: Sequelize.INTEGER,
-  would_sit_dog: Sequelize.BOOLEAN,
-  would_sit_cat: Sequelize.BOOLEAN,
-  would_sit_bird: Sequelize.BOOLEAN,
-  would_sit_snake: Sequelize.BOOLEAN,
-  additional_comments: Sequelize.STRING,
-}, {
-  timestamps: false
+  id: {
+    autoIncrement: true,
+    primaryKey: true,
+    type: DataTypes.INTEGER
+  },
+  routeName: {
+    type: DataTypes.STRING
+  },
+  full_name: {
+    notEmpty: true,
+    type: DataTypes.STRING
+  },
+  city: {
+    notEmpty: true,
+    type: DataTypes.STRING
+  },
+  email: {
+    notEmpty: true,
+    type: DataTypes.STRING,
+    validate: {
+      isEmail: true
+    }
+  },
+  years_of_experience: {
+    type: DataTypes.INTEGER
+  },
+  would_sit_dog: {
+    type: DataTypes.BOOLEAN
+  },
+  would_sit_cat: {
+    type: DataTypes.BOOLEAN
+  },
+  would_sit_bird: {
+    type: DataTypes.BOOLEAN
+  },
+  would_sit_snake: {
+    type: DataTypes.BOOLEAN
+  },
+  additional_comments: {
+    type: DataTypes.STRING
+  },
 });
 
-Sitters.sync();
-
-module.exports = Sitters;
+  return Sitters;
+}

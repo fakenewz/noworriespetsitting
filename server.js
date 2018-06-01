@@ -1,30 +1,41 @@
 var express = require("express");
-var login = require("./App/Routes/login-routes");
 var bodyParser = require("body-parser");
+
+var env = require('dotenv').load();
+var exphbs = require('express-handlebars')
+
+var passport = require('passport');
+var session = require('express-session');
 
 var app = express();
 var PORT = process.env.PORT || 8080;
+
+var db = require("./App/Models")
+
+app.use(session({ secret: 'secret',resave: true, saveUninitialized:true})); // session secret
+app.use(passport.initialize());
+app.use(passport.session()); // persistent login sessions
+
+
+app.set('views', './App/Public/2. Pages/9. Account/login.html')
+app.engine('hbs', exphbs({
+    extname: '.hbs'
+}));
+app.set('view engine', '.hbs');
+
 
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
 app.use(express.static("app/public"));
 
-app.use(function(req, res, next) {
-  res.header("Access-Control-Allow-Origin", "*");
-  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
-  next();
-});
-
 require("./App/Routes/api-routes")(app);
 require("./App/Routes/html-routes")(app);
 require("./App/Routes/login-routes")(app);
 
- var router = express.Router();
-// router.post('/register', login.register);
-// router.post('/login', login.login)
-// app.use('/api', router);  //change to different address?
 
-app.listen(PORT, function() {
+db.sequelize.sync().then(function() {
+  app.listen(PORT, function() {
   console.log("Server listening on: http://localhost:" + PORT);
+ });
 });
