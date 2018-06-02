@@ -23,6 +23,8 @@ app.engine('hbs', exphbs({
 }));
 app.set('view engine', '.hbs');
 
+var authroutes = require("./App/Routes/auth")(app)
+
 
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
