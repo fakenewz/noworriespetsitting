@@ -78,4 +78,7 @@ module.exports = function(app) {
     });
   });
 
+  //middleware code - use local strategy 
+  router.post/,passport.authenticate, req, res
+
 };
