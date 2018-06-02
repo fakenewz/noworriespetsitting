@@ -162,10 +162,10 @@
 						<div class="tab-content">
 							<!-- Login Tab content -->
 							<div class="tab-pane fade show active" id="tab-login">
-								<form>
+								<form id="signup" name="signup" method="post" action="/signup">
 									<input type="email" placeholder="Email Address" name="email" id="firstq" required>
 									<input type="password" placeholder="Password" name="thepassword" id="secondq"required>
-									<button class="button button-lg button-fill-left-outline button-fullwidth" id="login">Login</button>
+									<button class="button button-lg button-fill-left-outline button-fullwidth" id="login" value="Sign Up">Login</button>
 								</form>
 								<div class="margin-top-30">
 									<ul class="list-unstyled">
@@ -265,9 +265,9 @@
 		<script src="../../assets/plugins/jarallax/jarallax-element.min.js"></script>
 		<script src="../../assets/plugins/magnific-popup/magnific-popup.min.js"></script>
 		<script src="../../assets/plugins/owl-carousel/owl.carousel.min.js"></script>
-		<!-- Place your API Key in 'YOUR_API_KEY'
+		{{!-- <!-- Place your API Key in 'YOUR_API_KEY'
 		You can get Google API key here: 'https://developers.google.com/maps/documentation/javascript/get-api-key' -->
-		<script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap"></script>
+		<script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap"></script> --}}
 		<script src="../../assets/plugins/gmaps.min.js"></script>
 		<!-- Scripts -->
 		<script src="../../assets/js/functions.js"></script>
