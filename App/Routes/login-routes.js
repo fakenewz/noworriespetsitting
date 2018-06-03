@@ -24,20 +24,23 @@ module.exports = function(app) {
     res.redirect("/dashboard");
   });
 
-  app.post("/signin", function(req, res) {
+  app.post("/signin", passport.authenticate("local-signin", {
+    failureRedirect: "/signin"
+  }),
+     function(req, res) {
 
     console.log("bison");
     console.log(db.users)
   
-      db.users.findOne({
-        where: {
-          email: req.body.email
-        }
-      }).then(function(dbUsers) {
-        console.log(dbUsers)
-        res.redirect("/dashboard");
-      });
-    
+      // db.users.findOne({
+      //   where: {
+      //     email: req.body.email
+      //   }
+      // }).then(function(dbUsers) {
+      //   console.log(dbUsers)
+      //   res.redirect("/dashboard");
+      // });
+      res.redirect("/dashboard");
     });
 
 }
