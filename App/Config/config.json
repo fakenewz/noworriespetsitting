@@ -18,7 +18,7 @@
     "production": {
       "username": "pxgzhmcyxkxvlw",
       "password": "9ee0f60c5e160c098e46a701d02813c5cf83373b0f945ddbcc789f0607abf8a6",
-      "database": "petSitter",
+      "database": "d8s3pssq6b99cc",
       "host": "postgres://pxgzhmcyxkxvlw:9ee0f60c5e160c098e46a701d02813c5cf83373b0f945ddbcc789f0607abf8a6@ec2-54-204-2-26.compute-1.amazonaws.com:5432/d8s3pssq6b99cc",
       "port": 5432,
       "dialect": "mysql"
