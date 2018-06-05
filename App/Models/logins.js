@@ -1,6 +1,11 @@
 module.exports = function(sequelize, DataTypes) {
 
 var Users = sequelize.define("users", {
+  id: { 
+    autoIncrement: true, 
+    primaryKey: true, 
+    type: DataTypes.INTEGER
+  },
   email: {
     notEmpty: true,
     type: DataTypes.STRING,
@@ -13,10 +18,12 @@ var Users = sequelize.define("users", {
     allowNull: false
   },
   createdAt: {
-    type: DataTypes.BOOLEAN
+    type: DataTypes.DATE,
+    defaultValue: DataTypes.NOW
   },
   updatedAt: {
-    type: DataTypes.BOOLEAN
+    type: DataTypes.DATE,
+    defaultValue: DataTypes.NOW
   },
 }, {
   timestamps: false
