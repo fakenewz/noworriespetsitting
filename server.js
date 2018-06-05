@@ -35,6 +35,7 @@ app.use(express.static("app/public"));
 require("./App/Routes/api-routes")(app);
 require("./App/Routes/html-routes")(app);
 require("./App/Routes/login-routes")(app);
+require("./App/Routes/calendar-routes")(app);
 
 
 db.sequelize.sync().then(function() {

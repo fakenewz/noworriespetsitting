@@ -1,0 +1,8 @@
+.jumbotron {
+    margin-bottom: 0px;
+    background: url("dog_n_cat.JPG") no-repeat center center fixed;
+    background-position: 0% 25%;
+    background-size: cover;
+    background-attachment: fixed;
+    color: white;
+}

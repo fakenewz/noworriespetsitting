@@ -67,20 +67,7 @@ body {
 
                 <input type="checkbox" name="cat" value="1">Cat &nbsp;&nbsp;&nbsp;
                 <input type="checkbox" name="cat" value="0" checked style="display:none">
-
-                <input type="checkbox" name="bird" value="1">Bird &nbsp;&nbsp;&nbsp;
-                <input type="checkbox" name="bird" value="0" checked style="display:none">
-
-                <input type="checkbox" name="snake" value="1">Snake &nbsp;&nbsp;&nbsp;
-                <input type="checkbox" name="snake" value="0" checked style="display:none">
-            </form><br>
-
-            <div class="form-group">
-                <label for="user_moreinfo">
-                    <b>More information about my pet:</b>
-                </label>
-                <input type="text" class="form-control" id="eight_q" placeholder="Enter answer" name="eight_q">
-            </div>
+            </form>
             <br><br><br>
 
             <button type="button" class="btn btn-default" data-toggle="modal" id="submitnow">SUBMIT</button>
@@ -105,7 +92,7 @@ body {
 
 <script type="text/javascript">
 
-    $("#one_q").val(""); $("#two_q").val(""); $("#three_q").val(""); $("#eight_q").val("");
+    $("#one_q").val(""); $("#two_q").val(""); $("#three_q").val("");
 
     $("#submitnow").on("click", function (event) {
         event.preventDefault();
@@ -116,9 +103,6 @@ body {
             emailaddress: $("#two_q").val().trim(),
             hasDog: $("[name=dog]:checked").val().trim(),
             hasCat: $("[name=cat]:checked").val().trim(),
-            hasBird: $("[name=bird]:checked").val().trim(),
-            hasSnake: $("[name=snake]:checked").val().trim(),
-            moreInformation: $("#eight_q").val().trim(),
         };
 
         $.post("/api/newownerinformation", ownerAnswers)
@@ -126,7 +110,7 @@ body {
             console.log("Adding");
            });
 
-        $("#one_q").val(""); $("#two_q").val(""); $("#three_q").val(""); $("#eight_q").val("");
+        $("#one_q").val(""); $("#two_q").val(""); $("#three_q").val("");
 
     });
 

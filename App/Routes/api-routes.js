@@ -39,43 +39,58 @@ module.exports = function(app) {
     var petsit = req.body;
     var routeName = petsit.full_name.replace(/\s+/g, "").toLowerCase();
 
-    console.log(db.sitters)
+    console.log(db.dogSitters)
 
-    db.sitters.create({
+    db.dogSitters.create({
       routeName: routeName,
       full_name: petsit.full_name,
       city: petsit.city,
       email: petsit.email, 
-      years_of_experience: petsit.years_of_experience,
       would_sit_dog: petsit.would_sit_dog,
-      would_sit_cat: petsit.would_sit_cat,
-      would_sit_bird: petsit.would_sit_bird,
-      would_sit_snake: petsit.would_sit_snake,
-      additional_comments: petsit.additional_comments,
-    }).then(function(dbSitters) {
-      res.json(dbSitters);
+    }).then(function(dbSittersDog) {
+      res.json(dbSittersDog);
     });
+
+    db.catSitters.create({
+      routeName: routeName,
+      full_name: petsit.full_name,
+      city: petsit.city,
+      email: petsit.email, 
+      would_sit_cat: petsit.would_sit_cat,
+    }).then(function(dbSittersCat) {
+      res.json(dbSittersCat);
+    });
+
   });
 
   app.post("/api/newownerinformation", function(req, res) {
     var petowner = req.body;
     var routeName = petowner.fullname.replace(/\s+/g, "").toLowerCase();
 
-    console.log(db.owners)
+    console.log(db.ownersCat)
 
-    db.owners.create({
+    db.ownersCat.create({
       routeName: routeName,
       fullname: petowner.fullname,
       place: petowner.place,
       emailaddress: petowner.emailaddress, 
       hasDog: petowner.hasDog,
       hasCat: petowner.hasCat,
-      hasBird: petowner.hasBird,
-      hasSnake: petowner.hasSnake,
-      moreInformation: petowner.moreInformation,
-    }).then(function(dbOwners) {
-      res.json(dbOwners);
+    }).then(function(dbOwnersCat) {
+      res.json(dbOwnersCat);
     });
+
+    db.ownersDog.create({
+      routeName: routeName,
+      fullname: petowner.fullname,
+      place: petowner.place,
+      emailaddress: petowner.emailaddress, 
+      hasDog: petowner.hasDog,
+      hasCat: petowner.hasCat,
+    }).then(function(dbOwnersDog) {
+      res.json(dbOwnersDog);
+    });
+
   });
 
 };

@@ -1,6 +1,6 @@
 module.exports = function(sequelize, DataTypes) {
 
-var Sitters = sequelize.define("sitters", {
+var OwnersDog = sequelize.define("ownersDog", {
   id: {
     autoIncrement: true,
     primaryKey: true,
@@ -9,42 +9,27 @@ var Sitters = sequelize.define("sitters", {
   routeName: {
     type: DataTypes.STRING
   },
-  full_name: {
+  fullname: {
     notEmpty: true,
     type: DataTypes.STRING
   },
-  city: {
+  place: {
     notEmpty: true,
     type: DataTypes.STRING
   },
-  email: {
+  emailaddress: {
     notEmpty: true,
     type: DataTypes.STRING,
     validate: {
       isEmail: true
     }
   },
-  years_of_experience: {
-    type: DataTypes.INTEGER
-  },
-  would_sit_dog: {
+  hasDog: {
     type: DataTypes.BOOLEAN
-  },
-  would_sit_cat: {
-    type: DataTypes.BOOLEAN
-  },
-  would_sit_bird: {
-    type: DataTypes.BOOLEAN
-  },
-  would_sit_snake: {
-    type: DataTypes.BOOLEAN
-  },
-  additional_comments: {
-    type: DataTypes.STRING
   },
 }, {
   timestamps: false
 });
 
-  return Sitters;
+  return OwnersDog;
 }

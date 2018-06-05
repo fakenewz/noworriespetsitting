@@ -7,67 +7,53 @@
 	<meta name="description" content="">
 	<meta name="keywords" content="">
 	<title>Signup!</title>
-	<!-- Favicon -->
-	<link href="../Public/assets/images/favicon.png" rel="shortcut icon">
-	<!-- CSS -->
-	<link href="../Public/assets/plugins/bootstrap/bootstrap.min.css" rel="stylesheet">
-	<link href="../Public/assets/plugins/owl-carousel/owl.carousel.min.css" rel="stylesheet">
-	<link href="../Public/assets/plugins/owl-carousel/owl.theme.default.min.css" rel="stylesheet">
-	<link href="../Public/assets/plugins/magnific-popup/magnific-popup.min.css" rel="stylesheet">
-	<link href="../Public/assets/css/app.css" rel="stylesheet">
-	<!-- Fonts/Icons -->
-	<link href="../Public/assets/plugins/font-awesome/css/fontawesome-all.min.css" rel="stylesheet">
-	<link href="../Public/assets/plugins/themify/themify-icons.min.css" rel="stylesheet">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+	 crossorigin="anonymous">
+	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+	 crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+	 crossorigin="anonymous"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+	 crossorigin="anonymous"></script>
+
 </head>
 
-<body data-preloader="2">
-	<header>
-		<div class="bg-image parallax" style="background-image: url(/../../Public/assets/images/background.christmasdog.jpg)">
-			<div class="page-title-sm bg-black-07 text-center">
-				<div class="container">
-				</div>
-			</div>
-		</div>
-	</header>
+<body>
+	<div class="jumbotron" style="background-image: url(https://upload.wikimedia.org/wikipedia/commons/thumb/d/d5/Old_English_Sheep_Dog.JPG/640px-Old_English_Sheep_Dog.JPG); height: 350px; background-repeat: no-repeat; background-color: black; background-position: center;">
 
-	<form id="signup" name="signup" method="post" action="/signup">
-		<input type="email" placeholder="Email Address" name="email" id="firstq" required>
-		<input type="password" placeholder="Password" name="thepassword" id="secondq" required>
-		<button class="button" id="login" value="Sign Up">Login</button>
+		<h1 class="display-4" style="color: gray">No Worries Pet Sitting</h1>
+		<br><br><br><br><br>
+		<h2 style="color: gray; text-align: right">Find a sitter, find a job!</h2>
+	</div>
+
+	<form id="signup" style="margin: 50px" name="signup" method="post" action="/signup">
+	  <div class="form-group">
+       <label for="exampleInputEmail1">Email address</label>
+		<input type="email" class="form-control" aria-describedby="emailHelp" placeholder="Email Address" name="email" id="firstq" required>
+	  </div>
+	  <div class="form-group">
+	   <label for="exampleInputPassword1">Password</label>
+		<input type="password" class="form-control" placeholder="Password" name="thepassword" id="secondq" required>
+	  </div>
+		<button class="button" class="btn btn-primary" id="login" value="Sign Up">Login</button>
 	</form>
+	<br><br><br><br><br>
 
 	<footer>
 
 		<div class="footer-bottom bg-dark">
-			<div class="container">
+			<div class="container" style="width: 200px">
 				<div class="row">
-					<div class="col-12 col-md-6 text-center text-md-left">
-						<p>&copy; FakeNewz was here</p>
+					<div>
+						<p style="color: gray;">
+							&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+							FakeNewz Was Here</p>
 					</div>
 				</div>
 			</div>
 		</div>
 
 	</footer>
-
-		<!-- Libraries -->
-		<script src="../Public/assets/plugins/jquery.min.js"></script>
-		<script src="../Public/assets/plugins/bootstrap/popper.min.js"></script>
-		<!-- Plugins -->
-		<script src="../Public/assets/plugins/bootstrap/bootstrap.min.js"></script>
-		<script src="../Public/assets/plugins/appear.min.js"></script>
-		<script src="../Public/assets/plugins/easing.min.js"></script>
-		<script src="../Public/assets/plugins/retina.min.js"></script>
-		<script src="../Public/assets/plugins/countdown.min.js"></script>
-		<script src="../Public/assets/plugins/imagesloaded.pkgd.min.js"></script>
-		<script src="../Public/assets/plugins/isotope.pkgd.min.js"></script>
-		<script src="../Public/assets/plugins/jarallax/jarallax.min.js"></script>
-		<script src="../Public/assets/plugins/jarallax/jarallax-video.min.js"></script>
-		<script src="../Public/assets/plugins/jarallax/jarallax-element.min.js"></script>
-		<script src="../Public/assets/plugins/magnific-popup/magnific-popup.min.js"></script>
-		<script src="../Public/assets/plugins/owl-carousel/owl.carousel.min.js"></script>
-		<!-- Scripts -->
-		<script src="../Public/assets/js/functions.js"></script>
 
   </body>
 </html>

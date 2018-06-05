@@ -62,34 +62,6 @@ body {
                 <option value="Atlanta">Atlanta</option>
             </select><br><br>
 
-            <p>
-                <b>Experience (Years):</b>
-            </p>
-            <select id="fourth_q">
-                <option value="0">>1</option>
-                <option value="1">1</option>
-                <option value="2">2</option>
-                <option value="3">3</option>
-                <option value="4">4</option>
-                <option value="5">5+</option>
-            </select><br><br>
-
-            <!-- <p>
-                <b>Hourly Rate (Range):</b>
-            </p>
-            <select id="sixth_q">
-                <option value="1">$12.00 - $13.99</option>
-                <option value="2">$14.00 - $15.99</option>
-                <option value="3">$16.00 - $17.99</option>
-                <option value="4">$18.00 - $19.99</option>
-                <option value="5">$20.00 - $21.99</option>
-                <option value="6">$22.00 - $23.99</option>
-                <option value="7">$24.00 - $25.99</option>
-                <option value="8">$26.00 - $27.99</option>                
-                <option value="9">$28.00 - $29.99</option>
-                <option value="10">$30+</option>
-            </select><br><br> -->
-
             <form>
                     <b>Would you sit a</b><br>
                     <input type="checkbox" name="dog" value="1">Dog &nbsp;&nbsp;&nbsp;
@@ -98,19 +70,7 @@ body {
                     <input type="checkbox" name="cat" value="1">Cat &nbsp;&nbsp;&nbsp;
                     <input type="checkbox" name="cat" value="0" checked style="display:none">
     
-                    <input type="checkbox" name="bird" value="1">Bird &nbsp;&nbsp;&nbsp;
-                    <input type="checkbox" name="bird" value="0" checked style="display:none">
-    
-                    <input type="checkbox" name="snake" value="1">Snake &nbsp;&nbsp;&nbsp;
-                    <input type="checkbox" name="snake" value="0" checked style="display:none">
-                </form><br>
-
-            <div class="form-group">
-                <label for="user_moreinfo">
-                    <b>More about Me!</b>
-                </label>
-                <input type="text" class="form-control" id="tenth_q" placeholder="Enter answer" name="tenth_q">
-            </div>
+                </form>
             <br><br><br>
 
             <button type="button" class="btn btn-default" data-toggle="modal" id="submit">SUBMIT</button>
@@ -119,15 +79,6 @@ body {
 
     </div><br><br>
 
-    <br>
-    <footer class="footer">
-        <div class="container">
-            <p>
-                Dummy Footer
-            </p>
-        </div>
-    </footer>
-
     </div>
 
 </body>
@@ -135,7 +86,7 @@ body {
 
 <script type="text/javascript">
 
-    $("#first_q").val(""); $("#second_q").val(""); $("#third_q").val(""); $("#fourth_q").val(""); $("#tenth_q").val("");
+    $("#first_q").val(""); $("#second_q").val(""); $("#third_q").val("");
 
 
     $("#submit").on("click", function (event) {
@@ -145,12 +96,8 @@ body {
             full_name: $("#first_q").val().trim(),
             city: $("#third_q").val().trim(),
             email: $("#second_q").val().trim(),
-            years_of_experience: $("#fourth_q").val().trim(),
             would_sit_dog: $("[name=dog]:checked").val().trim(),
             would_sit_cat: $("[name=cat]:checked").val().trim(),
-            would_sit_bird: $("[name=bird]:checked").val().trim(),
-            would_sit_snake: $("[name=snake]:checked").val().trim(),
-            additional_comments: $("#tenth_q").val().trim(),
         };
 
         $.post("/api/newsitterinformation", sitterAnswers)
@@ -158,7 +105,7 @@ body {
             console.log("More");
            });
 
-        $("#first_q").val(""); $("#second_q").val(""); $("#third_q").val(""); $("#fourth_q").val(""); $("#tenth_q").val("");
+        $("#first_q").val(""); $("#second_q").val(""); $("#third_q").val("");
 
     });
 

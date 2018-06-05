@@ -1,6 +1,6 @@
 module.exports = function(sequelize, DataTypes) {
 
-var Owners = sequelize.define("owners", {
+var OwnersCat = sequelize.define("ownersCat", {
   id: {
     autoIncrement: true,
     primaryKey: true,
@@ -24,24 +24,12 @@ var Owners = sequelize.define("owners", {
       isEmail: true
     }
   },
-  hasDog: {
-    type: DataTypes.BOOLEAN
-  },
   hasCat: {
     type: DataTypes.BOOLEAN
-  },
-  hasBird: {
-    type: DataTypes.BOOLEAN
-  },
-  hasSnake: {
-    type: DataTypes.BOOLEAN
-  },
-  moreInformation: {
-    type: DataTypes.STRING
   },
 }, {
   timestamps: false
 });
 
-  return Owners;
+  return OwnersCat;
 }
