@@ -1,6 +1,7 @@
 'use strict';
 
 var fs        = require('fs');
+var pg        = require('pg');
 var path      = require('path');
 var Sequelize = require('sequelize');
 var basename  = path.basename(__filename);
