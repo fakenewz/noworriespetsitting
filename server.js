@@ -30,6 +30,13 @@ require('./App/Config/passport/passport')(passport, db.users); //
 app.use(bodyParser.urlencoded({ extended: true })); //
 app.use(bodyParser.json()); //
 
+app.use(function(req, res, next){
+  res.locals.login=req.isAuthenticated()
+  res.locals.session=req.session
+});
+
+
+
 app.use(express.static("app/public"));
 
 require("./App/Routes/api-routes")(app);

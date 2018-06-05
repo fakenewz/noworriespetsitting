@@ -3,6 +3,8 @@ var path = require("path");
 
 module.exports = function(app, passport) {
  
+    app.get('/', authController.signup);
+ 
     app.get('/signup', authController.signup);
 
     app.get('/signin', authController.signin);
