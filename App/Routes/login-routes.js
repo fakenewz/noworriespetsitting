@@ -7,7 +7,7 @@ module.exports = function(app) {
   }),
     function(req, res) {
 
-  console.log("here");
+  console.log("hello");
 
   var today = new Date();
   var loginNow = req.body;
