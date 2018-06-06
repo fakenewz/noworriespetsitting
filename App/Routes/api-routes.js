@@ -48,19 +48,20 @@ module.exports = function(app) {
       email: petsit.email, 
       would_sit_dog: petsit.would_sit_dog,
     }).then(function(dbSittersDog) {
-      res.json(dbSittersDog);
-    });
+      
+      db.catSitters.create({
+        routeName: routeName,
+        full_name: petsit.full_name,
+        city: petsit.city,
+        email: petsit.email, 
+        would_sit_cat: petsit.would_sit_cat,
+      }).then(function(dbSittersCat) {
+        res.json(dbSittersCat);
+      });
+  
+      console.log("pasta")
 
-    db.catSitters.create({
-      routeName: routeName,
-      full_name: petsit.full_name,
-      city: petsit.city,
-      email: petsit.email, 
-      would_sit_cat: petsit.would_sit_cat,
-    }).then(function(dbSittersCat) {
-      res.json(dbSittersCat);
-    });
-
+    });  
   });
 
   app.post("/api/newownerinformation", function(req, res) {
@@ -77,23 +78,21 @@ module.exports = function(app) {
       hasDog: petowner.hasDog,
       hasCat: petowner.hasCat,
     }).then(function(dbOwnersCat) {
-      res.json(dbOwnersCat);
+      
+      db.ownersDog.create({
+        routeName: routeName,
+        fullname: petowner.fullname,
+        place: petowner.place,
+        emailaddress: petowner.emailaddress, 
+        hasDog: petowner.hasDog,
+        hasCat: petowner.hasCat,
+      }).then(function(dbOwnersDog) {
+        res.json(dbOwnersDog);
+      });
+      
     });
 
-    db.ownersDog.create({
-      routeName: routeName,
-      fullname: petowner.fullname,
-      place: petowner.place,
-      emailaddress: petowner.emailaddress, 
-      hasDog: petowner.hasDog,
-      hasCat: petowner.hasCat,
-    }).then(function(dbOwnersDog) {
-      res.json(dbOwnersDog);
-    });
+    console.log("spaghetti")
 
   });
-
-  //middleware code - use local strategy 
-  // router.post/,passport.authenticate, req, res
-
 };

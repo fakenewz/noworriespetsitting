@@ -28,7 +28,7 @@ module.exports = function(app) {
   });
 
   app.get("/", function(req, res) {
-    res.sendFile(path.join(__dirname, "../Public/2. Pages/9. Account/home.html"));
+    res.sendFile(path.join(__dirname, "../views/home.html"));
   });
 
 };
