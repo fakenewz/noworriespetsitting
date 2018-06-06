@@ -22,7 +22,7 @@ CREATE TABLE pets (
 	routeName varchar(50) NOT NULL,
 	foreignkey int NOT NULL,
 	name_of_pet varchar(250) NOT NULL,
-	type_of_pet ENUM (Dog, Cat, Bird) NOT NULL,
+	type_of_pet ENUM (Dog, Cat, Fish, Reptile, Dartaniel) NOT NULL,
 	PRIMARY KEY (id)
 );
 )
