@@ -9,18 +9,6 @@ module.exports = function(app) {
 
   console.log("here");
 
-  var today = new Date();
-  var loginNow = req.body;
-  console.log(db.users)
-
-  // db.users.create({
-  //     email: loginNow.email, 
-  //     thepassword: loginNow.thepassword,
-  //     createdAt: today,
-  //     updatedAt: today 
-  //   }).then(function(dbUsers) {
-  //     res.redirect("/dashboard");
-  //   });
     res.redirect("/dashboard");
   });
 
@@ -30,16 +18,7 @@ module.exports = function(app) {
      function(req, res) {
 
     console.log("bison");
-    console.log(db.users)
-  
-      // db.users.findOne({
-      //   where: {
-      //     email: req.body.email
-      //   }
-      // }).then(function(dbUsers) {
-      //   console.log(dbUsers)
-      //   res.redirect("/dashboard");
-      // });
+
       res.redirect("/dashboard");
     });
 

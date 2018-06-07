@@ -1,30 +1,38 @@
+var db = require("../Models");
+var passport = require("passport");
+
 module.exports = function(sequelize, DataTypes) {
 
-var allUsers = sequelize.define("allUsers", {
+const AllUsers = sequelize.define("allUsers", {
   id: { 
     autoIncrement: true, 
     primaryKey: true, 
     type: DataTypes.INTEGER
   },
-  userfullname: {
-    type: DataTypes.STRING,
-  },
+  // routeName: {
+  //   type: DataTypes.STRING
+  // },
   email: {
     notEmpty: true,
     type: DataTypes.STRING,
-    validate: {
-      isEmail: true
-    }
+    isEmail: {
+      msg: "Email address"
+   } 
   },
   thepassword: {
     type: DataTypes.STRING,
     allowNull: false
   },
+  userfullname: {
+    type: DataTypes.STRING,
+  },
   usercity: {
-    type: DataTypes.ENUM
-},
+    type: DataTypes.ENUM,
+    values: ['Boston', 'Chicago', 'Los Angeles', 'New York']
+  },
   ownerorsitter: {
-    type: DataTypes.ENUM
+    type: DataTypes.ENUM,
+    values: ['owner', 'sitter']
   },
   createdAt: {
     type: DataTypes.DATE,
@@ -37,6 +45,39 @@ var allUsers = sequelize.define("allUsers", {
 }, {
   timestamps: false
 });
+return AllUsers;
  
-return Users;
+//
+
+const OwnersPets = sequelize.define("ownersPets", {
+    id: {
+      autoIncrement: true,
+      primaryKey: true,
+      type: DataTypes.INTEGER
+    },
+    //  routeName: {
+    //   type: DataTypes.STRING
+    // },
+    nameOfpet: {
+      notEmpty: true,
+      type: DataTypes.STRING
+    },
+    typeOfpet: {
+      type: DataTypes.ENUM,
+      values: ['Dog', 'Cat', 'Fish', 'Reptile', 'Dartaniel']
+    },
+    allusersId: {
+      type: DataTypes.INTEGER,
+      references: {
+        model: 'allUsers',
+        key: 'key'
+      }
+    }
+  }, {
+    timestamps: false
+  });
+  return OwnersPets;
+
+  AllUsers.hasMany(OwnersPets);
+
 }

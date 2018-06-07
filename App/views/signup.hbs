@@ -22,22 +22,53 @@
 	<div class="jumbotron" style="background-image: url(https://upload.wikimedia.org/wikipedia/commons/thumb/8/87/Kitten_%2806%29_by_Ron.jpg/640px-Kitten_%2806%29_by_Ron.jpg); height: 350px; background-repeat: no-repeat; background-color: black; background-position: center;">
 
 		<h1 class="display-4" style="color: gray">No Worries Pet Sitting</h1>
-		<br><br><br><br><br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
 		<h2 style="color: gray; text-align: right">Find a sitter, find a job!</h2>
 	</div>
 
 	<form id="signup" style="margin: 50px" name="signup" method="post" action="/signup">
-	  <div class="form-group">
-       <label for="exampleInputEmail1">Email address</label>
-		<input type="email" class="form-control" aria-describedby="emailHelp" placeholder="Email Address" name="email" id="firstq" required>
-	  </div>
-	  <div class="form-group">
-	   <label for="exampleInputPassword1">Password</label>
-		<input type="password" class="form-control" placeholder="Password" name="thepassword" id="secondq" required>
-	  </div>
+		<div class="form-group">
+			<label for="exampleInputEmail1">Email address</label>
+			<input type="email" class="form-control" aria-describedby="emailHelp" placeholder="Email Address" name="email" id="firstq"
+			 required>
+		</div>
+		<div class="form-group">
+			<label for="exampleInputPassword1">Password</label>
+			<input type="password" class="form-control" placeholder="Password" name="thepassword" id="secondq" required>
+		</div>
+		<div class="form-group">
+			<label>Full Name</label>
+			<input class="form-control" placeholder="fullName" name="userfullname" required>
+		</div>
+		<p>
+			<b>City:</b>
+		</p>
+		<select id="three_q" name="usercity">
+			<option value="Boston">Boston</option>
+			<option value="Chicago">Chicago</option>
+			<option value="Los Angeles">Los Angeles</option>
+			<option value="New York">New York</option>
+		</select>
+		<br>
+		<br>
+		<p>
+			<b>Owner or Sitter?</b>
+		</p>
+		<select id="four_q" name="ownerorsitter">
+			<option value="Owner">Owner</option>
+			<option value="Sitter">Sitter</option>
+		</select>
 		<button class="button" class="btn btn-primary" id="login" value="Sign Up">Submit</button>
 	</form>
-	<br><br><br><br><br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
 
 	<footer>
 
@@ -46,8 +77,7 @@
 				<div class="row">
 					<div>
 						<p style="color: gray;">
-							&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-							FakeNewz Was Here</p>
+							&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; FakeNewz Was Here</p>
 					</div>
 				</div>
 			</div>
@@ -55,5 +85,6 @@
 
 	</footer>
 
-  </body>
+</body>
+
 </html>

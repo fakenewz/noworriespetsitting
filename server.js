@@ -25,7 +25,7 @@ app.set('view engine', '.hbs'); //
 
 var authRoute = require("./App/Routes/auth")(app, passport); //
 
-require('./App/Config/passport/passport')(passport, db.users); //
+require('./App/Config/passport/passport')(passport, db.allUsers); //
 
 app.use(bodyParser.urlencoded({ extended: true })); //
 app.use(bodyParser.json()); //

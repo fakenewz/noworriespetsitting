@@ -1,29 +1,34 @@
 var bCrypt = require('bcrypt-nodejs');
 
-module.exports = function(passport, users) {
-    var Users = users;
+module.exports = function(passport, allUsers) {
+    var AllUsers = allUsers;
     var LocalStrategy = require('passport-local').Strategy;
     console.log("hello1")
-    passport.serializeUser(function(users, done) {
+    passport.serializeUser(function(allUsers, done) {
         
-        done(null, users.id);
+        done(null, allUsers.id);
       });
     
       passport.deserializeUser(function(id, done) {
         
-        Users.findById(id).then(function(users) {
-            if (users) {
-                done(null, users.get());
+        AllUsers.findById(id).then(function(allUsers) {
+            if (allUsers) {
+                done(null, allUsers.get());
             } else {
-                done(users.errors, null);
+                done(allUsers.errors, null);
             }
         });
       });
+      console.log("hello2")
 
   passport.use('local-signup', new LocalStrategy(
     {
+        // routeName: 'routeName',
         usernameField: 'email',
         passwordField: 'thepassword',
+        fullname: 'userfullname',
+        theusercity: 'usercity',
+        theownerorsitter: 'ownerorsitter',
         passReqToCallback: true
     },
 
@@ -33,7 +38,7 @@ module.exports = function(passport, users) {
             return bCrypt.hashSync(thepassword, bCrypt.genSaltSync(8), null);
         };
         
-        Users.findOne({
+        AllUsers.findOne({
             where: {
                 email: email
             }
@@ -50,9 +55,17 @@ module.exports = function(passport, users) {
                     {
                         email: email,
                         thepassword: userPassword,
+                        userfullname: req.body.userfullname,
+                        usercity: req.body.usercity,
+                        ownerorsitter: req.body.ownerorsitter
                     };
-                    console.log("fdf", data.password)
-                Users.create(data).then(function(newUser, created) {
+                    console.log("email", data.email)
+                    console.log("fullname", data.userfullname)
+                    console.log("city", data.usercity)
+                    console.log("ownerorsitter", data.ownerorsitter)
+                    console.log("fdf", data.thepassword)
+
+                AllUsers.create(data).then(function(newUser, created) {
                     if (!newUser) {
                         return done(null, false);
                     }
@@ -75,30 +88,30 @@ module.exports = function(passport, users) {
 
     function(req, email, thepassword, done) {
         
-        var Users = users;
+        var AllUsers = allUsers;
         var isValidPassword = function(userpass, thepassword) {
             return bCrypt.compareSync(thepassword, userpass);
         }
         
-        Users.findOne({
+        AllUsers.findOne({
             where: {
                 email: req.body.email
             }
-        }).then(function(users) {
-            if (!users) {
+        }).then(function(allUsers) {
+            if (!allUsers) {
                 return done(null, false, {
                     message: 'Sorry, user does not exist'
                 });
             } 
 
-            if (!isValidPassword(users.thepassword, thepassword)) {
+            if (!isValidPassword(allUsers.thepassword, thepassword)) {
                 return done(null, false, {
                     message: 'Password Incorrect!'
                 });
  
             }
 
-            var userinfo = users.get();
+            var userinfo = allUsers.get();
             return done(null, userinfo);
  
         }).catch(function(err) {

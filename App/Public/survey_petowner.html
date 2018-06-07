@@ -2,116 +2,101 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <title>Pet Owner Survey</title>
-
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-    <script src="https://code.jquery.com/jquery.js"></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <title>Pets!</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+        crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
         crossorigin="anonymous"></script>
 
 </head>
-
 <!---->
 
 <style>
-body {
-    padding-left: 30px;
-    background-color: lightpink;
-}
+    body {
+        padding-left: 30px;
+        background-color: lightpink;
+    }
 </style>
 
 <!---->
 
 <body>
-    <br>
+    <div class="panel panel-primary">
+        <div class="panel-heading">
+          <h3 class="panel-title"><strong>Add Your Pet(s)!</strong></h3>
+        </div>
     <div class="panel-body">
 
-        <form>
-
-            <div class="form-group">
-                <label for="user_firstname">
-                    <b>First and Last Name:</b>
-                </label>
-                <input type="text" class="form-control" id="one_q" placeholder="Enter answer" name="one_q">
-            </div>
-
-            <div class="form-group">
-                <label for="user_email">
-                    <b>Email:</b>
-                </label>
-                <input type="text" class="form-control" id="two_q" placeholder="Enter answer" name="two_q">
-            </div>
-
-            <p>
-                <b>City:</b>
-            </p>
-            <select id="three_q">
-                <option value="Chicago">Chicago</option>
-                <option value="NYC">New York City</option>
-                <option value="DC">Washington DC</option>
-                <option value="Boston">Boston</option>
-                <option value="Los_Angeles">Los Angeles</option>
-                <option value="San_Francisco">San Francisco</option>
-                <option value="Seattle">Seattle</option>
-                <option value="Austin">Austin</option>
-                <option value="Dallas">Dallas</option>
-                <option value="Atlanta">Atlanta</option>
-            </select><br><br>
-
-            <form>
-                <b>Do you have a </b><br>
-                <input type="checkbox" name="dog" value="1">Dog &nbsp;&nbsp;&nbsp;
-                <input type="checkbox" name="dog" value="0" checked style="display:none"> 
-
-                <input type="checkbox" name="cat" value="1">Cat &nbsp;&nbsp;&nbsp;
-                <input type="checkbox" name="cat" value="0" checked style="display:none">
-            </form>
-            <br><br><br>
-
-            <button type="button" class="btn btn-default" data-toggle="modal" id="submitnow">SUBMIT</button>
-
-        </form>
-
-    </div><br><br>
-
-    <br>
-    <footer class="footer">
-        <div class="container">
-            <p>
-                Dummy Footer
-            </p>
+    <form>
+        <div class="form-group">
+            <label for="pet-input">Pet Name:</label>
+            <input class="form-control" id="petname" type="text">
         </div>
-    </footer>
 
-    </div>
+        <select id="petType" >
+            <option value="Select">Select a Pet!</option>
+            <option value="Dog">Dog</option>
+            <option value="Cat">Cat</option>
+            <option value="Fish">Fish</option>
+            <option value="Reptile">Reptile</option>
+            <option value="Dartaniel">Dartaniel</option>
+        </select><br><br>
+            
+        <input class="btn btn-primary" type="submit" value="Add Pet!" id="submitButton">
 
-</body>
+    </form>
+   </div>
+  </div>
+
+    <h3 class="panel-title"><strong>Pets Added:</strong></h3>
+        <div class="panel-body">
+            <table class="table table-hover" id='petTable'>
+               <thead>
+                <tr>
+                  <th>Pet Name</th>
+                  <th>Pet Type</th>
+                </tr>
+               </thead>
+             <tbody>
+             </tbody>
+            </table>
+        </div>
+
+ </body>
 </html>
 
-<script type="text/javascript">
+<script src="https://code.jquery.com/jquery.js"></script>
 
-    $("#one_q").val(""); $("#two_q").val(""); $("#three_q").val("");
+<script>
 
-    $("#submitnow").on("click", function (event) {
+    $("#submitButton").on("click", function (event) {
         event.preventDefault();
 
-        var ownerAnswers = {
-            fullname: $("#one_q").val().trim(),
-            place: $("#three_q").val().trim(),
-            emailaddress: $("#two_q").val().trim(),
-            hasDog: $("[name=dog]:checked").val().trim(),
-            hasCat: $("[name=cat]:checked").val().trim(),
+        var ownerPetAnswers = {
+            nameOfpet: $("#petname").val().trim(),
+            typeOfpet: $("#petType").val().trim()
         };
 
-        $.post("/api/newownerinformation", ownerAnswers)
-           .then(function(data) {
-            console.log("Adding");
-           });
+          $("#petTable > tbody").append("<tr><td>" + ownerPetAnswers.nameOfpet + "</td><td>" + ownerPetAnswers.typeOfpet + "</td><td>" + "</td></tr>");
 
-        $("#one_q").val(""); $("#two_q").val(""); $("#three_q").val("");
+        $.post("/api/petOwnerSurvey", ownerPetAnswers)
+            .then(function (data) {
+                console.log("Adding");
+            });
+
+        $("#petname").val(""); $("#petType").val(""); 
 
     });
 
-</script>
+</script> 
+
+
+  
