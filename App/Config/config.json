@@ -1,15 +1,15 @@
 {
     "development": {
-      "username": "",
-      "password": "",
+      "username": "petapp",
+      "password": "Steve2627!",
       "database": "petSitter",
       "host": "127.0.0.1",
       "port": 3306,
       "dialect": "mysql"
     },
     "test": {
-      "username": "",
-      "password": "",
+      "username": "petapp",
+      "password": "Steve2627!",
       "database": "petSitter",
       "host": "127.0.0.1",
       "port": 3306,
