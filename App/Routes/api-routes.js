@@ -39,11 +39,12 @@ module.exports = function(app) {
     var ownerPet = req.body;
     
     console.log("now")
-    console.log(db.ownersPets)
+    console.log(db.OwnersPets)
 
-    db.ownersPets.create({
+    db.OwnersPets.create({
       nameOfpet: ownerPet.nameOfpet,
       typeOfpet: ownerPet.typeOfpet,
+      AllUserId: req.session.passport.user 
     }).then(function(dbownerPet) {
         res.json(dbownerPet);
       });
