@@ -1,7 +1,7 @@
 {
     "development": {
       "username": "petapp",
-      "password": "noworries",
+      "password": "Steve2627!",
       "database": "petSitter",
       "host": "127.0.0.1",
       "port": 3306,
@@ -9,7 +9,7 @@
     },
     "test": {
       "username": "petapp",
-      "password": "noworries",
+      "password": "Steve2627!",
       "database": "petSitter",
       "host": "127.0.0.1",
       "port": 3306,
