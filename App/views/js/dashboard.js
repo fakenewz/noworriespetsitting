@@ -19,8 +19,6 @@ $(document).ready(function() {
   }
 
   function renderUserProfiles(object) {
-    // sitterProfiles.children().not(":last").remove();
-    // sitterContainer.children(".alert").remove();
     if (object.length) {
       console.log(object);
       userList.prepend(object);

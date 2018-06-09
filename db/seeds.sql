@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 CREATE TABLE AllUsers(
    id            INTEGER  NOT NULL PRIMARY KEY 
   ,email         VARCHAR(34) NOT NULL
@@ -55,3 +56,9 @@ INSERT INTO AllUsers(id,email,thepassword,userfullname,usercity,ownerorsitter,cr
 INSERT INTO AllUsers(id,email,thepassword,userfullname,usercity,ownerorsitter,createdAt,updatedAt) VALUES (45,'cedmeades18@skyrock.com','$2a$08$gbo4vifVCHDsqXBTOFMPNuo4E9H.AnSPDmArSqWCCLarXuO7gyOuq','Chane Edmeades','New York City','sitter','6/7/18 20:42','6/7/18 17:08');
 INSERT INTO AllUsers(id,email,thepassword,userfullname,usercity,ownerorsitter,createdAt,updatedAt) VALUES (46,'ahubball19@stumbleupon.com','$2a$08$gbo4vifVCHDsqXBTOFMPNuo4E9H.AnSPDmArSqWCCLarXuO7gyOuq','Akim Hubball','Dallas','sitter','6/7/18 16:12','6/1/18 2:50');
 INSERT INTO AllUsers(id,email,thepassword,userfu...
+=======
+/* Seeds for SQL table.*/
+-- USE petSitter;
+
+-- INSERT INTO sitters (first_name, last_name, city, email, years_of_experience, would_sit_dog, would_sit_cat, would_sit_bird, would_sit_snake, additional_comments) VALUES ('Allie', 'Rollinson', 'Chicago', 'allie.rollinson@gmail.com', 4, 1, 1, 1, 0, 'hard pass on snakes');
+>>>>>>> d5484dba755da76506f0f149848e894981e25a3e
