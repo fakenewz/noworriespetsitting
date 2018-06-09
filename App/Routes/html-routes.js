@@ -11,24 +11,24 @@ module.exports = function(app) {
     res.sendFile(path.join(__dirname, "../Public/survey_petowner.html"));
   });
 
-  app.get("/appointments", function(req, res) {
-    res.sendFile(path.join(__dirname, "../calendar/calendar.html"));
-  });
+  //app.get("/appointments", function(req, res) {
+   // res.sendFile(path.join(__dirname, "../calendar/calendar.html"));
+ // });
 
   app.get("/signup", function(req, res) {
-    res.render(path.join(__dirname, "../views/signup.html"),{});
+    res.render(path.join(__dirname, "../views/PetSitter-HTML-Working w_ tags/HTML/Sign Up.html"),{});
   });
 
   app.get("/signin", function(req, res) {
-    res.render(path.join(__dirname, "../views/signin.html"),{});
+    res.render(path.join(__dirname, "../views/PetSitter-HTML-Working w_ tags/HTML/SignIn.html"),{});
   });
 
   app.get("/dashboard", function(req, res) {
-    res.render(path.join(__dirname, "../views/dashboard.html"),{});
+    res.render(path.join(__dirname, "../views/PetSitter-HTML-Working w_ tags/HTML/dashboard.html"),{});
   });
 
   app.get("/", function(req, res) {
-    res.sendFile(path.join(__dirname, "../views/home.html"));
+    res.sendFile(path.join(__dirname, "../views/PetSitter-HTML-Working w_ tags/HTML/index.html"));
   });
 
 };

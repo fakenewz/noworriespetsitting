@@ -1,0 +1,142 @@
+Version 1.4.2
+
+JS
+	js/bootstrap.js
+CSS
+	css/bootstrap.min.css
+
+
+
+------------------------
+
+
+
+Version 1.4.1
+
+JS
+	js/custom.js
+
+
+
+------------------------
+
+
+
+Version 1.4.0
+
+HTML
+	*.html - all HTML files
+
+JS
+	js/bootstrap.js
+	vendor/isotope/*.*
+	js/custom.js
+CSS
+	css/bootstrap.min.css
+	css/fonts/font-awesome/*.*
+
+
+
+------------------------
+
+
+Version 1.3.1
+
+HTML
+	*.html - all HTML files
+
+JS
+	js/custom.js
+
+CSS
+	css/theme.less
+	css/theme.css
+
+
+------------------------
+
+
+Version 1.3.0
+
+HTML
+	*.html (newsletter form changed, newsletter script added)
+	page-login.html - added
+	features-shortcodes.html
+	features-icons.html
+
+JS
+	vendor/bootstrap.js
+
+LESS & CSS
+	css/bootstrap.min.css
+	css/theme-elements.less
+	css/theme-elements.css
+	css/theme.less
+	css/theme.css
+	css/mixins.less
+
+Other
+	css/fonts/font-awesome/*.*
+	css/fonts/entypo/*.*
+
+
+
+------------------------
+
+
+Version 1.2
+
+HTML
+	features-shortcodes.html
+	index.html
+
+
+JS
+	js/custom.js
+
+
+CSS
+	vendor/owl-carousel/owl.theme.css
+	css/theme-elements.less
+	css/theme-elements.css
+	css/theme.less
+	css/theme.css
+	fonts/entypo/css/entypo.css
+
+
+Other
+	fonts/entypo/fonts/*.*
+
+
+
+------------------------
+
+
+
+Version 1.1
+
+
+HTML
+	features-icons.html
+
+
+JS
+	vendor/bootstrap.js
+
+
+CSS
+	css/fonts/font-awesome/font-awesome.css
+	css/fonts/font-awesome/font-awesome.min.css
+	css/bootstrap.min.css
+
+
+Other
+css/fonts/font-awesome/fonts/*.*
+
+
+------------------------
+
+
+Version 1.0
+
+    Initial template version.
