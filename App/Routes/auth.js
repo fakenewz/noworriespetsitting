@@ -19,20 +19,19 @@ module.exports = function(app, passport) {
       }
   }
 
-     app.get('/dashboard', isLoggedIn, authController.dashboard)
-
+     app.get('/dashboard', isLoggedIn, function (req, res) {
+    // console.log("hey now", authController.dashboard)
      console.log("apple");
 
      db.AllUsers.findAll({
         where: {
           ownerorsitter: "sitter"
         }
-      }).then(function(dbperson, res) {
-        //   .then(function(dbPerson) {
-
+      }).then(function(dbperson) {
         console.log("star")
         console.log("HERE!!!!!!", dbperson)
-        res.json(dbperson);
+         res.json(dbperson);
       });
-        
-    }
+    //  res.render('dashboard');
+    });
+  }
