@@ -16,13 +16,12 @@ The app requires a few installs in order to work, please reference the package-j
 <b>Running the tests: </b>
 
 The app works as follows:
-The user enters in a 
+The user enters into the app and is given an overview of the app, which shows pictures of dogs and cats, with testimonals provided to the user so they get a good feel how the site works. We include pictures of the team and a section to sign into the app. The user will create a user id using their email account, from there, they're given the opportunity to sign up as a pet owner or pet host, here, they will be added to the database.
 
-<b>Screenshots:</b>
+If the pet owner is looking for someone to take care of their pet, they will put their location and receive a bunch of users that have already signed up to take care of pets, so they will see all the results. 
 
-![alt text](https://github.com/fakenewz/tripify/blob/master/images/2018-04-10%2012_46_16-Tripify.png)
+The app is very user-friendly and makes it easier for someone to have their pets taken care of while they're away on vacation or just an extended period of time. The app also provides an opportunity for someone to make a little extra money and take care of a pet or if they love pets, gives them more time to spend with little loved ones.
 
-![alt text](https://github.com/fakenewz/tripify/blob/master/images/2018-04-10%2012_50_10-Tripify.png)
 
 <b>Built With:</b>
 
