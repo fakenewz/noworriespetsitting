@@ -1,8 +1,8 @@
-DROP DATABASE IF EXISTS petSitters;
+DROP DATABASE IF EXISTS heroku_a84e573161fc075;
 
-CREATE DATABASE petSitters;
+CREATE DATABASE heroku_a84e573161fc075;
 
-USE petSitters;
+USE heroku_a84e573161fc075;
 
 
 

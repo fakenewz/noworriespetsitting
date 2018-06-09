@@ -24,17 +24,16 @@ module.exports = function(app, passport) {
      console.log("apple");
      var Sequelize = require('sequelize');
      const Op = Sequelize.Op
-     var query = {};
 
      db.AllUsers.findAll({
       where: {
         ownerorsitter: {
-          [Op.ne]: req.query.ownerorsitter.value
+          [Op.ne]: 'owners'
         }
        }
       }).then(function(dbperson) {
-      //  console.log("star")
-      //  console.log("HERE!!!!!!", dbperson)
+        console.log("star")
+        console.log("HERE!!!!!!", dbperson)
          res.json(dbperson);
       });
     //  res.render('dashboard');
