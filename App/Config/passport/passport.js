@@ -4,18 +4,18 @@ var db = require('../../Models')
 module.exports = function (passport) {
      var LocalStrategy = require('passport-local').Strategy;
     console.log("hello1")
-    passport.serializeUser(function (allUsers, done) {
+    passport.serializeUser(function (AllUsers, done) {
 
-        done(null, allUsers.id);
+        done(null, AllUsers.id);
     });
 
     passport.deserializeUser(function (id, done) {
 
-        db.AllUsers.findById(id).then(function (allUsers) {
-            if (allUsers) {
-                done(null, allUsers.get());
+        db.AllUsers.findById(id).then(function (AllUsers) {
+            if (AllUsers) {
+                done(null, AllUsers.get());
             } else {
-                done(allUsers.errors, null);
+                done(AllUsers.errors, null);
             }
         });
     });
@@ -94,21 +94,21 @@ module.exports = function (passport) {
                 where: {
                     email: req.body.email
                 }
-            }).then(function (allUsers) {
-                if (!allUsers) {
+            }).then(function (AllUsers) {
+                if (!AllUsers) {
                     return done(null, false, {
                         message: 'Sorry, user does not exist'
                     });
                 }
 
-                if (!isValidPassword(allUsers.thepassword, thepassword)) {
+                if (!isValidPassword(AllUsers.thepassword, thepassword)) {
                     return done(null, false, {
                         message: 'Password Incorrect!'
                     });
 
                 }
 
-                var userinfo = allUsers.get();
+                var userinfo = AllUsers.get();
                 return done(null, userinfo);
 
             }).catch(function (err) {
