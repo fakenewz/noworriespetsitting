@@ -28,17 +28,17 @@ The app is very user-friendly and makes it easier for someone to have their pets
 
 <b>Built With:</b>
 
-JS
-HTML
-Node
-Heroku
-ClearDB
-Passport js
-CSS
-Sequelize
-Mysql2
-PG
-body-parser
+JS,
+HTML,
+Node,
+Heroku,
+ClearDB,
+Passport js,
+CSS,
+Sequelize,
+Mysql2,
+PG,
+body-parser,
 Path
 
 
