@@ -40,11 +40,11 @@ const AllUsers = sequelize.define("AllUsers", {
   timestamps: false
 });
 
-  AllUsers.associate = function(models) {
-    AllUsers.hasMany(models.OwnersPets, {
-      // onDelete: "cascade"
-      });
-    };
+  // AllUsers.associate = function(models) {
+  //   AllUsers.hasMany(models.OwnersPets, {
+  //     // onDelete: "cascade"
+  //     });
+  //   };
 
   return AllUsers;
  
