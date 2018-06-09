@@ -18,14 +18,14 @@ const OwnersPets = sequelize.define("OwnersPets", {
   timestamps: false
 });
 
-  OwnersPets.associate = function(models) {
+  // OwnersPets.associate = function(models) {
 
-    OwnersPets.belongsTo(models.AllUsers, {
-      foreignKey: {
-        allowNull: false
-     }
-    });
-  };
+  //   OwnersPets.belongsTo(models.AllUsers, {
+  //     foreignKey: {
+  //       allowNull: false
+  //    }
+  //   });
+  // };
 
 return OwnersPets;
 
