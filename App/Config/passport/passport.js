@@ -92,7 +92,7 @@ module.exports = function (passport) {
 
             db.AllUsers.findOne({
                 where: {
-                    email: req.body.email
+                    email: email
                 }
             }).then(function (AllUsers) {
                 if (!AllUsers) {

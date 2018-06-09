@@ -20,16 +20,21 @@ module.exports = function(app, passport) {
   }
 
      app.get('/dashboard', isLoggedIn, function (req, res) {
-    // console.log("hey now", authController.dashboard)
+
      console.log("apple");
+     var Sequelize = require('sequelize');
+     const Op = Sequelize.Op
+     var query = {};
 
      db.AllUsers.findAll({
-        where: {
-          ownerorsitter: "sitter"
+      where: {
+        ownerorsitter: {
+          [Op.ne]: req.query.ownerorsitter.value
         }
+       }
       }).then(function(dbperson) {
-        console.log("star")
-        console.log("HERE!!!!!!", dbperson)
+      //  console.log("star")
+      //  console.log("HERE!!!!!!", dbperson)
          res.json(dbperson);
       });
     //  res.render('dashboard');
