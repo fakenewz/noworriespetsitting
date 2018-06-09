@@ -12,16 +12,15 @@ var PORT = process.env.PORT || 8080;
 
 var db = require("./App/Models") 
 
-app.use(session({ secret: 'secret', resave: false, saveUninitialized: false})); // session secret
+app.use(session({ secret: 'secret', resave: false, saveUninitialized: false})); 
 app.use(passport.initialize()); 
 app.use(passport.session()); 
 
 
 app.set('views', './App/views') 
-app.engine('hbs', exphbs({ 
-    extname: '.hbs' 
-})); //
-app.set('view engine', '.hbs'); 
+app.engine('html', require('ejs').renderFile);
+app.set('view engine', 'html');
+
 
 var authRoute = require("./App/Routes/auth")(app, passport); 
 
@@ -35,7 +34,6 @@ app.use(express.static("app/public"));
 require("./App/Routes/api-routes")(app);
 require("./App/Routes/html-routes")(app);
 require("./App/Routes/login-routes")(app);
-require("./App/Routes/calendar-routes")(app);
 
 
 db.sequelize.sync().then(function() {

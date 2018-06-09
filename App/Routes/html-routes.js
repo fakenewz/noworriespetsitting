@@ -16,15 +16,15 @@ module.exports = function(app) {
   });
 
   app.get("/signup", function(req, res) {
-    res.render(path.join(__dirname, "../views/signup.hbs"),{});
+    res.render(path.join(__dirname, "../views/signup.html"),{});
   });
 
   app.get("/signin", function(req, res) {
-    res.render(path.join(__dirname, "../views/signin.hbs"),{});
+    res.render(path.join(__dirname, "../views/signin.html"),{});
   });
 
   app.get("/dashboard", function(req, res) {
-    res.render(path.join(__dirname, "../views/dashboard.hbs"),{});
+    res.render(path.join(__dirname, "../views/dashboard.html"),{});
   });
 
   app.get("/", function(req, res) {

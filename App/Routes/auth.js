@@ -1,5 +1,6 @@
 var authController = require('../Controllers/authcontroller');
 var path = require("path");
+var db = require("../Models");
 
 module.exports = function(app, passport) {
  
@@ -18,6 +19,20 @@ module.exports = function(app, passport) {
       }
   }
 
-     app.get('/dashboard', isLoggedIn, authController.dashboard);
-}
+     app.get('/dashboard', isLoggedIn, authController.dashboard)
 
+     console.log("apple");
+
+     db.AllUsers.findAll({
+        where: {
+          ownerorsitter: "sitter"
+        }
+      }).then(function(dbperson, res) {
+        //   .then(function(dbPerson) {
+
+        console.log("star")
+        console.log("HERE!!!!!!", dbperson)
+        res.json(dbperson);
+      });
+        
+    }
