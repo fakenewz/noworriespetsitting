@@ -1,16 +1,16 @@
 {
     "development": {
-      "username": "petapp",
-      "password": "noworries",
-      "database": "petSitter",
+      "username": "b1bd076ae2e740",
+      "password": "1916f213",
+      "database": "heroku_a84e573161fc075",
       "host": "127.0.0.1",
       "port": 3306,
       "dialect": "mysql"
     },
     "test": {
-      "username": "petapp",
-      "password": "noworries",
-      "database": "petSitter",
+      "username": "b1bd076ae2e740",
+      "password": "1916f213",
+      "database": "heroku_a84e573161fc075",
       "host": "127.0.0.1",
       "port": 3306,
       "dialect": "mysql"
