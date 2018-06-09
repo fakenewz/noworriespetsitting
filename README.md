@@ -1,1 +1,67 @@
-# noworriespetsitting
+
+<h2><b>noworriespetsitting:</b></h2>
+
+The No Worries Pet Sitting app allows people to have their pets taken care of while the owner is away or gives an option for someont to petsit a cat or dog. Our app has serveral functionalities, like allowing the user to login and create a user, include what type of pet it is and their name. On the host side, it allows the user to give their info. for people to browse, they can filter by where they live to find who's available to take care of their "kids"!
+
+
+<b>Getting Started:</b> 
+
+In order to access the app, please visit: https://pure-oasis-23490.herokuapp.com/. From here you'll be able to enter in your information and test the app to see all of its great functionalities. Take a look at the app, and sign up to take care of a pet today or go on a vacation and have someone take care of your pet while you're away.
+
+<b>Installing</b>
+
+The app requires a few installs in order to work, please reference the package-json file
+
+
+<b>Running the tests: </b>
+
+The app works as follows:
+The user enters in a 
+
+<b>Screenshots:</b>
+
+![alt text](https://github.com/fakenewz/tripify/blob/master/images/2018-04-10%2012_46_16-Tripify.png)
+
+![alt text](https://github.com/fakenewz/tripify/blob/master/images/2018-04-10%2012_50_10-Tripify.png)
+
+<b>Built With:</b>
+
+JS
+HTML
+Node
+Heroku
+ClearDB
+Passport js
+CSS
+Sequelize
+Mysql2
+PG
+body-parser
+Path
+
+
+
+<b>Authors: </b>
+
+:microphone: Whitney Shirk – Initial work –https://github.com/fakenewz/noworriespetsitting
+
+:saxophone: Sean Som – Initial work -https://github.com/fakenewz/noworriespetsitting
+
+:guitar: Winnie Wu – Initial work - https://github.com/fakenewz/noworriespetsitting
+
+:headphones: Mike Gomez - Initial work - https://github.com/fakenewz/noworriespetsitting
+
+
+
+<b>Acknowledgments:</b>
+
+•Hat tip to anyone whose code was used
+
+•Inspiration
+
+•Coders who created npm packages
+
+•TA's
+
+•The Team!
+
